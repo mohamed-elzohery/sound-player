@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>zplayer</title>
+</head>
+<body>
+    <div class="player">
+        <ul class="player__list"></ul>
+        <div class="board">
+            <audio id="audio"  preload="auto"></audio>
+            <input type="range" name="progress" id="progress" class="progress" min="0" value="0">
+            <p class="player__counter"><span class="current">00:00</span>/<span class="total-duration">00:00</span></p>
+            <div class="controllers">
+
+                <button id="loop" class="player__btn">
+                    <svg class="player__icon">
+                        <use href="/svg/sprite.svg#icon-spinner11"></use>
+                    </svg>
+                </button>
+
+                <button id="shuffle" class="player__btn" status="disable">
+                    <svg class="player__icon">
+                        <use href="/svg/sprite.svg#icon-shuffle"></use>
+                    </svg>
+                </button>
+
+                <button id="slow" class="player__btn">
+                    <svg class="player__icon">
+                        <use href="/svg/sprite.svg#icon-backward2"></use>
+                    </svg>
+                </button>
+
+                <button id="playpause" class="player__btn" status="paused">
+                    <svg class="player__icon">
+                        <use href="/svg/sprite.svg#icon-play3"></use>
+                    </svg>
+                </button>
+
+                <button id="speed" class="player__btn">
+                    <svg class="player__icon">
+                        <use href="/svg/sprite.svg#icon-forward3"></use>
+                    </svg>
+                </button>
+
+                <div class="volume__controllers">
+                    <button class="player__btn--transparent" id="mute" status="unmuted">
+                        <svg class="player__icon player__icon--light">
+                            <use href="/svg/sprite.svg#icon-volume-medium"></use>
+                        </svg>
+                    </button>
+                    <input type="range" name="volume" id="volume" class="volume" min="0" max="100" value="50">
+                </div>
+            </div>
+        </div>
+    </div>
+    <form class="file-form">
+        <label for="file-selector" class="file__add">+</label>
+        <input type="file" id="file-selector" accept=".wav, .mp3, .mp4" class="file-selector">
+    </form>
+    <script src="player.js"></script>
+</body>
+</html>
